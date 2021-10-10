@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.timer{
+    max-width: 80%;
+    height: auto;
+    margin: 4rem auto;
+}
+
+/*Time design*/
+
+.time{
+    margin: 1rem auto;
+    max-width:70%;
+    font-size: 19px;
+    height: auto;
+    text-align: center;
+}
+
+.time h3{
+    margin-top: 40px;
+    padding: 10px;
+    font-size: 24px;
+}
+
+/*Controls design*/
+
+.controls{
+    margin: 1rem auto;
+    max-width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.selectors{
+    max-width: 500px;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.buttons{
+    width: auto;
+    height: auto;
+    margin-top:2rem;
+}
+
+.controls select{
+    border-color: rgb(48, 48, 48);
+    border-radius: 2px;
+    outline: 0;
+    width: 100px;
+    padding: 5px;
+    margin: 10px;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+}
+
+label{
+    margin-top: 20px;
+}
+
+.controls button{
+    border-radius: 2px;
+    border: none;
+    outline: 0;
+    width: 100px;
+    padding: 5px;
+    font-size: 16px;
+    margin: 5px auto;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.controls button:hover{
+    transition: all 0.5s ease;
+    opacity: .75;
+}
+
+#btn-pause{
+    background-color: rgb(148, 20, 20);
+}
+
+#btn-start{
+    background-color: rgb(37, 126, 37);
+}
+
+#btn-cancel{
+    background-color: rgb(197, 87, 9);
+}

@@ -16,6 +16,7 @@ export function TempoRun(){
         seconds = 0,
         minutes =0;
         $audio.src = "./app/assets/sound.mp3";
+    let speechMessage = new SpeechSynthesisUtterance();
     //Event change 
     d.addEventListener("change", (e)=>{
         if(e.target === $selector){
@@ -51,9 +52,14 @@ export function TempoRun(){
                 seconds ++;
                 if(minutes == valueTimeStart){
                     clearInterval(clockTime);
+                    setTimeout(()=>{
+                        speechMessage.text = "To relax now";
+                        window.addEventListener("change", (e)=>speechMessage.voice = "Google US English (en-US)");
+                        window.speechSynthesis.speak(speechMessage);
+                    }, 500);
                     setTimeout(() => {
                         $audio.play();
-                    }, 1000);
+                    }, 2000);
                     seconds = 0;
                     minutes = 0;
                     $title.textContent = "Relax time";
@@ -66,9 +72,14 @@ export function TempoRun(){
                             seconds ++;
                             if(minutes == valueRelax){
                                 clearInterval(clockRelax);
+                                setTimeout(()=>{
+                                    speechMessage.text = "To work now";
+                                    window.addEventListener("change", (e)=>speechMessage.voice = "Google US English (en-US)");     
+                                    window.speechSynthesis.speak(speechMessage);
+                                }, 500);
                                 setTimeout(() => {
                                     $audio.play();
-                                }, 1000);
+                                }, 2000);
                                 seconds = 0;
                                 minutes = 0;
                                 $title.textContent = "Time work";
@@ -85,7 +96,7 @@ export function TempoRun(){
                 }
                 $timeText.textContent = `${(minutes <=9)? "0" + minutes: minutes}:${(seconds <=9)? "0" + seconds: seconds}`;
             }, 1000);
-            console.log(e);
+            //console.log(e);
             e.target.disabled = true;
             $selector.disabled = true;
             $relax.disabled = true;
